@@ -155,12 +155,14 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         // Trim off any extra "0s" at the end.
-        while (displayStr.endsWith("0")) {
-            displayStr = displayStr.substring(0, displayStr.length() - 1);
+        var cleanedStr = displayStr;
+        while (cleanedStr.endsWith("0")) {
+            cleanedStr = cleanedStr.substring(0, cleanedStr.length() - 1);
         }
         // And now if it ends with a ".", trim that too.
-        if (displayStr.endsWith(".")) {
-            displayStr = displayStr.substring(0, displayStr.length() - 1);
+        if (cleanedStr.endsWith(".")) {
+            cleanedStr = cleanedStr.substring(0, cleanedStr.length() - 1);
         }
+        displayStr = cleanedStr;
     }
 }
