@@ -13,11 +13,7 @@ import androidx.test.core.app.ActivityScenario;
  */
 public class ExampleUnitTest {
     @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
-    }
-
-    @Test
-    public void some_random_test() {
+    public void should_always_pass() {
+        assertEquals(2, 1 + 1);
     }
 }
