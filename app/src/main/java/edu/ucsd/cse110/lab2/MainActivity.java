@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         btnEquals.setOnClickListener(this::onEqualsButtonClicked);
     }
 
-    void onNumberButtonClicked(View view) {
+    private void onNumberButtonClicked(View view) {
         // Before casting, it's best to be sure we actually have what we think!
         assert view instanceof Button;
         Button btn = (Button) view;
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         updateDisplay();
     }
 
-    void onDotButtonClicked(View view) {
+    private void onDotButtonClicked(View view) {
         assert view instanceof Button;
         Button btn = (Button) view;
 
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
         updateDisplay();
     }
 
-    void onOperationButtonClicked(View view) {
+    private void onOperationButtonClicked(View view) {
         assert view instanceof Button;
         Button btn = (Button) view;
 
@@ -110,11 +110,11 @@ public class MainActivity extends AppCompatActivity {
         pendingOp = Optional.of(btn.getText().toString());
     }
 
-    void onClearButtonClicked(View view) {
+    private void onClearButtonClicked(View view) {
         clearDisplay();
     }
 
-    void onEqualsButtonClicked(View view) {
+    private void onEqualsButtonClicked(View view) {
         // Parse the current value.
         var currValue = new BigDecimal(displayStr);
 
@@ -140,16 +140,16 @@ public class MainActivity extends AppCompatActivity {
         updateDisplay();
     }
 
-    void updateDisplay() {
+    private void updateDisplay() {
         display.setText(displayStr);
     }
 
-    void clearDisplay() {
+    private void clearDisplay() {
         displayStr = "0";
         updateDisplay();
     }
 
-    void trimDisplayStr() {
+    private void trimDisplayStr() {
         // If the string does not contain a decimal point, don't do anything.
         if (!displayStr.contains(".")) {
             return;
