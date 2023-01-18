@@ -15,5 +15,6 @@ public class ExampleUnitTest {
     @Test
     public void should_always_pass() {
         assertEquals(2, 1 + 1);
+        assertEquals("2.3", Utilities.trimDisplayStr("2.30000000"));
     }
 }
